@@ -13,7 +13,7 @@ class Contenedor {
       error.code === "ENOENT"
         ? this.createEmptyFile()
         : console.log(
-            `Error Code: ${error.code} There was an unexpected error when trying to read ${this.filename}`
+            `Codigo de Error: ${error.code} Se produjo un error inesperado al intentar leer ${this.filename}`
           );
     }
   }
@@ -22,7 +22,7 @@ class Contenedor {
     fs.writeFile(this.filename, "[]", (error) => {
       error
         ? console.log(error)
-        : console.log(`File ${this.filename} was created since it didn't exist in the system`);
+        : console.log(`File ${this.filename} fue creado porque no existía en el sistema`);
     });
   }
 
@@ -35,7 +35,7 @@ class Contenedor {
       return parsedData.find((producto) => producto.id === id);
     } catch (error) {
       console.log(
-        `Error Code: ${error.code} There was an error when trying to get an element by its ID (${id})`
+        `Codigo de Error: ${error.code} Se ha producido un error al intentar obtener un elemento por su ID (${id})`
       );
     }
   }
@@ -55,12 +55,12 @@ class Contenedor {
         await fs.promises.writeFile(this.filename, JSON.stringify(parsedData));
         return true;
       } else {
-        console.log(`ID ${id} does not exist in the file`);
+        console.log(`ID ${id} no existe en el archivo`);
         return null;
       }
     } catch (error) {
       console.log(
-        `Error Code: ${error.code} There was an error when trying to delete an element by its ID (${id})`
+        `Codigo de Error: ${error.code} Se ha producido un error al intentar eliminar un elemento por su ID (${id})`
       );
     }
   }
@@ -83,12 +83,12 @@ class Contenedor {
         await fs.promises.writeFile(this.filename, JSON.stringify(parsedData));
         return true;
       } else {
-        console.log(`ID ${id} does not exist in the file`);
+        console.log(`ID ${id} no existe en el archivo`);
         return null;
       }
 
     } catch (error) {
-      `Error Code: ${error.code} There was an error when trying to update an element by its ID (${id})`
+      `Codigo de Error : ${error.code} Se ha producido un error al intentar actualizar un elemento por su ID (${id})`
     }
   }
 
@@ -104,7 +104,7 @@ class Contenedor {
       return object.id;
     } catch (error) {
       console.log(
-        `Error Code: ${error.code} There was an error when trying to save an element`
+        `Codigo de Error: ${error.code} Se ha producido un error al intentar guardar un elemento`
       );
     }
   }
@@ -114,7 +114,7 @@ class Contenedor {
       await this.createEmptyFile();
     } catch (error) {
       console.log(
-        `There was an error (${error.code}) when trying to delete all the objects`
+        `Se ha producido un error (${error.code}) al intentar eliminar todos los objetos`
       );
     }
   }

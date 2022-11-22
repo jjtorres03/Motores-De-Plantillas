@@ -19,10 +19,10 @@ class Contenedor {
   }
 
   async createEmptyFile() {
-    fs.writeFile(this.filename, "[]", (error) => {
+    fs.writeFile(this._filename, "[]", (error) => {
       error
         ? console.log(error)
-        : console.log(`File ${this.filename} fue creado porque no existía en el sistema`);
+        : console.log(`File ${this.filename}fue creado porque no existía en el sistema`);
     });
   }
 
@@ -60,7 +60,7 @@ class Contenedor {
       }
     } catch (error) {
       console.log(
-        `Codigo de Error: ${error.code} Se ha producido un error al intentar eliminar un elemento por su ID (${id})`
+        `Codigo de Error : ${error.code} Se ha producido un error al intentar eliminar un elemento por su ID (${id})`
       );
     }
   }
@@ -88,7 +88,7 @@ class Contenedor {
       }
 
     } catch (error) {
-      `Codigo de Error: ${error.code} Se ha producido un error al intentar actualizar un elemento por su ID (${id})`
+      `Codigo de Error : ${error.code} Se ha producido un error al intentar actualizar un elemento por su ID (${id})`
     }
   }
 
@@ -104,7 +104,7 @@ class Contenedor {
       return object.id;
     } catch (error) {
       console.log(
-        `Codigo de Error: ${error.code} Se ha producido un error al intentar guardar un elemento`
+        `Codigo de Error : ${error.code}  Se ha producido un error al intentar guardar un elemento`
       );
     }
   }
@@ -114,7 +114,7 @@ class Contenedor {
       await this.createEmptyFile();
     } catch (error) {
       console.log(
-        `Se ha producido un error (${error.code}) al intentar eliminar todos los objetos`
+        `Se ha producido un error ${error.code} al intentar eliminar todos los objetos`
       );
     }
   }
